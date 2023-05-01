@@ -20,11 +20,7 @@ import "@refinedev/antd/dist/reset.css";
 
 import { ProjectList, ProjectCreate, ProjectEdit, ProjectShow } from "./pages/projects";
 import { TOKEN_KEY, API_URL } from "./constants";
-import ConfigList from "./pages/configs/list";
-import ConfigCreate from "./pages/configs/create";
-import ConfigEdit from "./pages/configs/edit";
-import ConfigDetail from "./pages/configs/show";
-import ConfigCreateWithProject from "./pages/configs/createconfig";
+
 
 //const API_URL = "https://api.fake-rest.refine.dev";
 
@@ -124,15 +120,7 @@ const App = () => {
                         create: ProjectCreate,
                         edit: ProjectEdit,
                         show: ProjectShow,
-                    },
-                    {
-                        name: "configs",
-                        list: ConfigList,
-                        create: ConfigCreate,
-                        edit: ConfigEdit,
-                        show: ConfigDetail,
-                        createconfig:ConfigCreateWithProject,
-                    },
+                    }
                 ]}
                 notificationProvider={notificationProvider}
                 options={{
@@ -162,14 +150,6 @@ const App = () => {
                             <Route path="create" element={<ProjectCreate />} />
                             <Route path="edit/:id" element={<ProjectEdit />} />
                             <Route path="show/:id" element={<ProjectShow />} />
-                        </Route>
-
-                        <Route path="/configs">
-                            <Route index element={<ConfigList />} />
-                            <Route path="create" element={<ConfigCreate />} />
-                            <Route path="create/:projectId/:id" element={<ConfigCreateWithProject />} />
-                            <Route path="edit/:id" element={<ConfigEdit />} />
-                            <Route path="show/:id" element={<ConfigDetail />} />
                         </Route>
                     </Route>
                     <Route
